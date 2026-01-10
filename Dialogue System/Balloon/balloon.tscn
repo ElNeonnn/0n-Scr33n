@@ -8,7 +8,7 @@
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1n565"]
 texture = ExtResource("2_7v75m")
 
-[node name="Balloon" type="Control"]
+[node name="Balloon" type="Control" node_paths=PackedStringArray("SpeakerLabel", "LineLabel")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -16,6 +16,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_4yf4v")
+SpeakerLabel = NodePath("Textbox/SpeakerMargin/SpeakerLabel")
+LineLabel = NodePath("Textbox/LineMargin/LineLabel")
 
 [node name="Textbox" type="PanelContainer" parent="."]
 layout_mode = 1

@@ -29,4 +29,13 @@ public partial class Balloon : Control
 		SpeakerLabel.Text = speaker.Name;
 		LineLabel.Text = line.Text;
 	}
+
+    public override void _Input(InputEvent @event)
+    {
+        if (@event.IsActionPressed("ui_accept"))
+		{
+			index++;
+			WriteLine();
+		}
+    }
 }
