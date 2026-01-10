@@ -1,0 +1,72 @@
+[gd_scene load_steps=6 format=3 uid="uid://xwjkmw42kyyi"]
+
+[ext_resource type="Script" uid="uid://cn75855ndkjr8" path="res://Dialogue System/Balloon/Balloon.cs" id="1_4yf4v"]
+[ext_resource type="FontFile" uid="uid://b4y8mo6qls6k2" path="res://Dialogue System/Assets/Fonts/Tahoma.ttf" id="1_a8nx2"]
+[ext_resource type="FontFile" uid="uid://byuiirduhmm50" path="res://Dialogue System/Assets/Fonts/Tahoma Bold.ttf" id="2_4yf4v"]
+[ext_resource type="Texture2D" uid="uid://copxeuly67dx" path="res://Dialogue System/Assets/Sprites/Textbox.png" id="2_7v75m"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1n565"]
+texture = ExtResource("2_7v75m")
+
+[node name="Balloon" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4yf4v")
+
+[node name="Textbox" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -616.0
+offset_top = -235.0
+offset_right = 614.0
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_1n565")
+
+[node name="SpeakerMargin" type="MarginContainer" parent="Textbox"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_bottom = 187
+
+[node name="SpeakerLabel" type="Label" parent="Textbox/SpeakerMargin"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_fonts/font = ExtResource("2_4yf4v")
+theme_override_font_sizes/font_size = 14
+text = "Map"
+
+[node name="LineMargin" type="MarginContainer" parent="Textbox"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 30
+
+[node name="LineLabel" type="RichTextLabel" parent="Textbox/LineMargin"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_a8nx2")
+theme_override_fonts/bold_font = ExtResource("2_4yf4v")
+bbcode_enabled = true
+text = "Olá, pessoal! :D"
+
+[node name="OptionsContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -125.0
+offset_right = 125.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
