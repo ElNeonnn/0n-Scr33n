@@ -12,17 +12,21 @@ public partial class Balloon : Control
 	private DialogueSpeaker speaker;
 	private DialogueLine line;
 
-    public override void _Ready()
-    {
-		speaker = _dialogue.Lines[index].Speaker;
-		line = _dialogue.Lines[index];
-    }
-
 	public void StartDialogue(DialogueScene dialogue)
 	{
 		_dialogue = dialogue;
 		index = 0;
 
+		WriteLine();
 		Show();
+	}
+
+	private void WriteLine()
+	{
+        speaker = _dialogue.Lines[index].Speaker;
+        line = _dialogue.Lines[index];
+
+		SpeakerLabel.Text = speaker.Name;
+		LineLabel.Text = line.Text;
 	}
 }
