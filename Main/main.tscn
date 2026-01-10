@@ -1,0 +1,10 @@
+[gd_scene load_steps=4 format=3 uid="uid://dj6mq147r5vlx"]
+
+[ext_resource type="Script" uid="uid://dm7cpmqxfwiyi" path="res://Main/Main.cs" id="1_yh5la"]
+[ext_resource type="PackedScene" uid="uid://xwjkmw42kyyi" path="res://Dialogue System/Balloon/balloon.tscn" id="2_qvhan"]
+[ext_resource type="Resource" uid="uid://bwotkpmpl41q" path="res://Dialogue System/Dialogues/Teste.tres" id="3_eunhr"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_yh5la")
+BalloonScene = ExtResource("2_qvhan")
+Dialogue = ExtResource("3_eunhr")
