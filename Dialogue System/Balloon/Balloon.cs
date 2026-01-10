@@ -23,6 +23,12 @@ public partial class Balloon : Control
 
 	private void WriteLine()
 	{
+		if (ContainsErrors())
+		{
+			Hide();
+			return;
+		};
+
         speaker = _dialogue.Lines[index].Speaker;
         line = _dialogue.Lines[index];
 
@@ -32,10 +38,25 @@ public partial class Balloon : Control
 
     public override void _Input(InputEvent @event)
     {
-        if (@event.IsActionPressed("ui_accept"))
+        if (@event.IsActionPressed("ui_accept") && !ContainsErrors())
 		{
 			index++;
 			WriteLine();
 		}
+    }
+
+    private bool ContainsErrors()
+    {
+		if (_dialogue == null)
+		{
+			return true;
+		}
+
+		if (index >= _dialogue.Lines.Length)
+		{
+			return true;
+		}
+
+		return false;
     }
 }
